@@ -37,6 +37,21 @@ Each couch record should look like this:
 }
 ```
 
+You should also add under the design docs for your subdomains database
+
+```
+{
+   "_id": "_design/_view",
+   "_rev": "1-b4518c63183b699ff060ded22fd00c36",
+   "language": "javascript",
+   "views": {
+       "getDomain": {
+           "map": "function(doc){emit(doc.domain, doc);}"
+       }
+   }
+}
+```
+
 3. Refresh URL
 
 If, while the app is running, you add new subdomains to couch, there is a way to refresh your app.
